@@ -9,5 +9,5 @@
   "files.exclude": {
     "**/.git": false
   },
-  "cSpell.ignoreWords": ["setmobileOpen"]
+  "cSpell.ignoreWords": ["TMDB", "setmobileOpen"]
 }
