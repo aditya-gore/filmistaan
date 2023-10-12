@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useGetGenresQuery } from '../../services/TMDB';
-import useStyles from './styles';
+import useStyles from './Styles';
 import genreIcons from '../../assets/genres';
 
 const categories = [
