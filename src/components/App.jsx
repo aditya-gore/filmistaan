@@ -5,7 +5,7 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { Route, Switch } from 'react-router-dom';
 
-import useStyles from './styles';
+import useStyles from './Styles';
 
 import { Actors, MovieInformation, Movies, NavBar, Profile } from '.';
 
