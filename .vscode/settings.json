@@ -1,7 +1,7 @@
 {
   "cSpell.words": ["Filmpire"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
 
   "eslint.workingDirectories": ["./client", "./server"],
@@ -9,5 +9,5 @@
   "files.exclude": {
     "**/.git": false
   },
-  "cSpell.ignoreWords": ["TMDB", "setmobileOpen"]
+  "cSpell.ignoreWords": ["Favorited", "TMDB", "setmobileOpen"]
 }
