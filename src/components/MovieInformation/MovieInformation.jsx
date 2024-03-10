@@ -4,7 +4,7 @@
 /* eslint-disable jsx-quotes */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   Typography,
@@ -43,6 +43,7 @@ const MovieInformation = () => {
   const { id } = useParams();
   const classes = useStyles();
   const { data, isFetching, error } = useGetMovieQuery(id);
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({
@@ -181,7 +182,11 @@ const MovieInformation = () => {
                 >
                   IMDB
                 </Button>
-                <Button onClick={() => {}} href='#' endIcon={<Theaters />}>
+                <Button
+                  onClick={() => setOpen(true)}
+                  href='#'
+                  endIcon={<Theaters />}
+                >
                   Trailer
                 </Button>
               </ButtonGroup>
@@ -231,6 +236,25 @@ const MovieInformation = () => {
           <Box>Sorry, nothing was found</Box>
         )}
       </Box>
+      <Modal
+        closeAfterTransition
+        className={classes.modal}
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        {data?.videos?.results?.length > 0 && (
+          <iframe
+            autoPlay
+            className={classes.video}
+            frameBorder='0'
+            title='Trailer'
+            src={`https://www.youtube.com/embed/${
+              data.videos.results[data.videos.results.length - 1].key
+            }`}
+            allow='autoplay'
+          />
+        )}
+      </Modal>
     </Grid>
   );
 };
