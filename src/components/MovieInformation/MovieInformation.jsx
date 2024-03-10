@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable operator-linebreak */
 /* eslint-disable jsx-quotes */
@@ -31,18 +32,28 @@ import axios from 'axios';
 
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import useStyles from './Styles';
-import { useGetMovieQuery } from '../../services/TMDB';
+import {
+  useGetMovieQuery,
+  useGetRecommendationsQuery,
+} from '../../services/TMDB';
 import genreIcons from '../../assets/genres';
+import { MovieList } from '..';
 
 const MovieInformation = () => {
   const { id } = useParams();
   const classes = useStyles();
   const { data, isFetching, error } = useGetMovieQuery(id);
   const dispatch = useDispatch();
+  const { data: recommendations, isFetching: isRecommendationsFetching } =
+    useGetRecommendationsQuery({
+      list: '/recommendations',
+      movieId: id,
+    });
   const addToFavorites = () => {};
   const addToWatchList = () => {};
   const isMovieFavorited = true;
   const isMovieWatchListed = false;
+
   if (isFetching) {
     return (
       <Box display='flex' justifyContent='center' alignItems='center'>
@@ -210,6 +221,16 @@ const MovieInformation = () => {
           </div>
         </Grid>
       </Grid>
+      <Box marginTop='5rem' width='100%'>
+        <Typography variant='h3' gutterBottom align='center'>
+          You might also like
+        </Typography>
+        {recommendations ? (
+          <MovieList movies={recommendations} numberOfMovies={12} />
+        ) : (
+          <Box>Sorry, nothing was found</Box>
+        )}
+      </Box>
     </Grid>
   );
 };
