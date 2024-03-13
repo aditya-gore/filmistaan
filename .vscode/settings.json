@@ -9,5 +9,11 @@
   "files.exclude": {
     "**/.git": false
   },
-  "cSpell.ignoreWords": ["Favorited", "TMDB", "setmobileOpen"]
+  "cSpell.ignoreWords": [
+    "Favorited",
+    "TMDB",
+    "Watchlisted",
+    "setmobileOpen",
+    "watchlist"
+  ]
 }
