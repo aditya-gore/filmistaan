@@ -3,7 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useRef } from 'react';
 import { CssBaseline } from '@mui/material';
-import { Route, Switch } from 'react-router-dom';
+import { Routes as Switch, Route } from 'react-router-dom';
 import useAlan from './Alan';
 import useStyles from './Styles';
 
@@ -18,22 +18,22 @@ const App = () => {
       <CssBaseline />
       <NavBar />
       <main className={classes.content}>
+        {' '}
+        {/* main div contains the main part of the application */}
         <div className={classes.toolbar} />
         <Switch>
-          <Route exact path='/movie/:id'>
-            <MovieInformation />
-          </Route>
-          <Route exact path='/actors/:id'>
-            <Actors />
-          </Route>
-          <Route exact path={['/', '/approved']}>
-            <Movies />
-          </Route>
-          <Route exact path='/profile/:id'>
-            <Profile />
-          </Route>
+          {' '}
+          {/* a <Switch> looks through its children <Route>s and renders the first one that matches the current URL */}
+          <Route exact path='/movie/:id' element={<MovieInformation />} />{' '}
+          {/* notice: /:id <=> /<number> */}
+          <Route exact path='/actors/:id' element={<Actors />} />
+          <Route exact path='/*' element={<Movies />} />{' '}
+          {/* notice: it's smart to use 'exact' */}
+          <Route exact path='/approved' element={<Movies />} />
+          <Route exact path='/profile/:id' element={<Profile />} />
         </Switch>
       </main>
+
       <div ref={alanBtnContainer} />
     </div>
   );

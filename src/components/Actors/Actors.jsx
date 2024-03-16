@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { Box, Button, CircularProgress, Grid, Typography } from '@mui/material';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowBack } from '@mui/icons-material';
 import {
   useGetActorsDetailsQuery,
@@ -15,7 +15,7 @@ import useStyles from './styles';
 const Actors = () => {
   const { id } = useParams();
   const [page, setPage] = useState(1);
-  const history = useHistory();
+  const history = useNavigate();
   const { data, isFetching, error } = useGetActorsDetailsQuery(id);
   const { data: movies } = useGetMoviesByActorIdQuery({ id, page });
   const classes = useStyles();
@@ -32,7 +32,7 @@ const Actors = () => {
       <Box display='flex' justifyContent='center' alignItems='center'>
         <Button
           startIcon={<ArrowBack />}
-          onClick={() => history.goBack()}
+          onClick={() => history(-1)}
           color='primary'
         >
           Go Back
@@ -80,7 +80,7 @@ const Actors = () => {
             </Button>
             <Button
               startIcon={<ArrowBack />}
-              onClick={() => history.goBack()}
+              onClick={() => history(-1)}
               color='primary'
             >
               Back
