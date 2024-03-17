@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable implicit-arrow-linebreak */
 import React, { createContext, useState, useMemo } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';

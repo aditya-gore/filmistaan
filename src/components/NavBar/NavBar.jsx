@@ -32,7 +32,7 @@ import { fetchToken, createSessionId, moviesApi } from '../../utils';
 
 const NavBar = () => {
   const { isAuthenticated, user } = useSelector(userSelector);
-  const [mobileOpen, setmobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const classes = useStyles();
   const isMobile = useMediaQuery('(max-width:600px)');
   const theme = useTheme();
@@ -68,7 +68,7 @@ const NavBar = () => {
               color='inherit'
               edge='start'
               style={{ outline: 'none' }}
-              onClick={() => setmobileOpen((prevMobileOpen) => !prevMobileOpen)}
+              onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
               className={classes.menuButton}
             >
               <Menu />
@@ -99,7 +99,7 @@ const NavBar = () => {
                 <Avatar
                   style={{ width: 30, height: 30 }}
                   alt='Profile'
-                  src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
                 />
               </Button>
             )}
@@ -114,11 +114,11 @@ const NavBar = () => {
               variant='temporary'
               anchor='right'
               open={mobileOpen}
-              onClose={() => setmobileOpen((prevMobileOpen) => !prevMobileOpen)}
+              onClose={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
               classes={{ paper: classes.drawerPaper }}
               ModalProps={{ keepMounted: true }}
             >
-              <Sidebar setmobileOpen={setmobileOpen} />
+              <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
           ) : (
             <Drawer
@@ -126,7 +126,7 @@ const NavBar = () => {
               variant='permanent'
               open
             >
-              <Sidebar setmobileOpen={setmobileOpen} />
+              <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
           )}
         </nav>
