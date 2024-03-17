@@ -10,7 +10,7 @@ import {
   useGetMoviesByActorIdQuery,
 } from '../../services/TMDB';
 import { MovieList, Pagination } from '..';
-import useStyles from './styles';
+import useStyles from './Styles';
 
 const Actors = () => {
   const { id } = useParams();
