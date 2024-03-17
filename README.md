@@ -17,7 +17,7 @@
     <a href="https://github.com/aditya-gore/filmistaan"><strong>Explore the project »</strong></a>
     <br />
     <br />
-    <a href="add demo link here">View Demo Site</a>
+    <a href="https://fimistaan-by-aditya.netlify.app">View Demo Site</a>
     ·
     <a href="https://github.com/aditya-gore/filmistaan/issues">Report Bug</a>
     ·
@@ -51,7 +51,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](add demo link here)
+[![Product Name Screen Shot][product-screenshot]](https://fimistaan-by-aditya.netlify.app)
 
 Filmpire combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux, Material UI, Alan AI, and more.
 
