@@ -16,7 +16,7 @@ const useAlan = () => {
   const history = useNavigate();
   useEffect(() => {
     alanBtn({
-      key: '4749d7f240b3c154ec1cf531e5817cf52e956eca572e1d8b807a3e2338fdd0dc/stage',
+      key: process.env.REACT_APP_ALAN_KEY,
       onCommand: ({ command, mode, genres, genreOrCategory, query }) => {
         if (command === 'chooseGenre') {
           const foundGenre = genres.find(
