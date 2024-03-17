@@ -168,4 +168,4 @@ Used resources:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[product-screenshot]: src/assets/screenshots/Screenshot.PNG
+[product-screenshot]: src/assets/screenshots/Screenshot.png
