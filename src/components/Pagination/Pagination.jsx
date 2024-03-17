@@ -1,7 +1,7 @@
 /* eslint-disable jsx-quotes */
 import React from 'react';
 import { Typography, Button } from '@mui/material';
-import useStyles from './styles';
+import useStyles from './Styles';
 
 const Pagination = ({ currentPage, totalPages, setPage }) => {
   const classes = useStyles();
