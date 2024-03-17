@@ -52,7 +52,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://fimistaan-by-aditya.netlify.app)
 
-Filmpire combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux, Material UI, Alan AI, and more.
+Fimistaan combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux, Material UI, Alan AI, and more.
 
 Features include:
 
@@ -64,7 +64,7 @@ Features include:
 - movie search functionality,
 - Alan AI voice functionality and many more.
 
-Alan works as an in-app voice assistant for the Filmpire project.
+Alan works as an in-app voice assistant for the Fimistaan project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
